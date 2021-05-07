@@ -1,0 +1,20 @@
+Package: Geography
+Type: Package
+Title: Calculate some geographic data
+Version: 0.1.0
+Author: LZU_ZTX
+Maintainer: LZU-ZTX <2301366947@qq.com>
+Description: According to the input parameters, we can use this package to calculate some data 
+    that are often used in geography, 
+    such as calculating the solar elevation angles according to the input date.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    lubridate
+Depends: 
+    R (>= 2.10)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr
+VignetteBuilder: knitr

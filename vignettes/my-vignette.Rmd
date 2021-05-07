@@ -1,0 +1,51 @@
+---
+title: "Calculate the solar elevation angles with R"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Calculate the solar elevation angles with R}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Solar altitude Angle is the Angle between the sun's rays at a place and the section of the earth's surface through which they pass to the center of the earth.With this package, you can easily calculate the sun altitude Angle.
+
+## Calculate the solar elevation angles
+
+According to the input date and the local latitude value, we can get the solar altitude angle at that time.
+
+```{r }
+library(Geography)
+
+SolarAltitudeAngle("2021/3/21 12:00:00",36.05)
+
+SolarAltitudeAngle("2021/6/22 12:00:00",36.05)
+
+SolarAltitudeAngle("2021/9/23 12:00:00",36.05)
+
+SolarAltitudeAngle("2021/12/22 12:00:00",36.05)
+```
+This function needs to pass two parameters: date and latitude. It should be noted that the date should be at least accurate to the hour (24-hour system), otherwise the correct result cannot be obtained.In addition, the latitude and the solar elevation angles are expressed by the angle system.
+
+Let's take a look at a wrong demonstration
+```{r }
+
+SolarAltitudeAngle("2021/3/21",36.05)
+
+```
+The result of the above code running is negative, which is obviously wrong.
+
+## The data set
+
+This data set is the solar altitude angle at 12:00 noon in Lanzhou through the above function, which is not the real measured data.
+
+```{r}
+head(LanZhou)
+tail(LanZhou)
+```
